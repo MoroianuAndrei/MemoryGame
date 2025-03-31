@@ -24,4 +24,12 @@
     <TotalScore>0</TotalScore>
     <TotalPlayTime>PT0S</TotalPlayTime>
   </User>
+  <User>
+    <Username>Goofy</Username>
+    <ImagePath>/images/user_icon/goofy.png</ImagePath>
+    <GamesPlayed>0</GamesPlayed>
+    <GamesWon>0</GamesWon>
+    <TotalScore>0</TotalScore>
+    <TotalPlayTime>PT0S</TotalPlayTime>
+  </User>
 </ArrayOfUser>

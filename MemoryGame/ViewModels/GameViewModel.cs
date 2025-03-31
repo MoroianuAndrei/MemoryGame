@@ -189,13 +189,13 @@ namespace MemoryGame.ViewModels
             imageIds = imageIds.OrderBy(x => random.Next()).ToList();
 
             // Creăm cărțile cu imaginile corespunzătoare
-            BitmapImage backImage = new BitmapImage(new Uri($"pack://application:,,,/Images/back.png", UriKind.Absolute));
+            BitmapImage backImage = new BitmapImage(new Uri($"pack://application:,,,/Images/Game/Background.png", UriKind.Absolute));
 
             for (int i = 0; i < totalCards; i++)
             {
                 // Încarcă imaginea frontală bazată pe categoria selectată
                 BitmapImage frontImage = new BitmapImage(
-                    new Uri($"pack://application:,,,/Images/Category{_selectedCategory}/{imageIds[i]}.png", UriKind.Absolute));
+                    new Uri($"pack://application:,,,/Images/Game/Category{_selectedCategory}/Photo{imageIds[i]}.png", UriKind.Absolute));
 
                 Cards.Add(new Card(i, frontImage, backImage));
             }
