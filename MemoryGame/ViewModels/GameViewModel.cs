@@ -86,10 +86,11 @@ namespace MemoryGame.ViewModels
         private int _selectedCategory = 1;
         private DateTime _gameStartTime;
         private DispatcherTimer _gameTimer;
+        private Card _firstFlippedCard;
+        private Card _secondFlippedCard;
+        private bool _isProcessingTurn;
         private TimeSpan _currentElapsedTime;
         private int _moves;
-        private Card _firstFlippedCard;
-        private bool _isProcessingTurn;
 
         public ICommand SelectCategoryCommand { get; }
         public ICommand NewGameCommand { get; }
@@ -150,6 +151,7 @@ namespace MemoryGame.ViewModels
             CurrentScore = 0;
             _moves = 0;
             _firstFlippedCard = null;
+            _secondFlippedCard = null;
             _isProcessingTurn = false;
 
             // Creăm cărțile pentru joc
@@ -288,6 +290,7 @@ namespace MemoryGame.ViewModels
             else
             {
                 // A doua carte întoarsă - verificăm dacă e pereche
+                _secondFlippedCard = card;
                 _moves++;
                 _isProcessingTurn = true;
 
@@ -298,10 +301,11 @@ namespace MemoryGame.ViewModels
                 {
                     // Cărțile formează o pereche
                     _firstFlippedCard.IsMatched = true;
-                    card.IsMatched = true;
+                    _secondFlippedCard.IsMatched = true;
                     CurrentScore += 10; // Adăugăm puncte pentru pereche
 
                     _firstFlippedCard = null;
+                    _secondFlippedCard = null;
                     _isProcessingTurn = false;
 
                     // Verificăm dacă jocul s-a terminat
@@ -310,16 +314,35 @@ namespace MemoryGame.ViewModels
                 else
                 {
                     // Cărțile nu formează o pereche - le întoarcem înapoi după un scurt delay
-                    var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-                    timer.Tick += (s, e) =>
+                    // Folosim Application.Current.Dispatcher pentru a asigura execuția pe thread-ul UI
+                    Application.Current.Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        _firstFlippedCard.IsFlipped = false;
-                        card.IsFlipped = false;
-                        _firstFlippedCard = null;
-                        _isProcessingTurn = false;
-                        timer.Stop();
-                    };
-                    timer.Start();
+                        // Creăm un nou timer pentru această operațiune
+                        var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
+                        timer.Tick += (s, e) =>
+                        {
+                            // Oprim timer-ul pentru a nu se executa de mai multe ori
+                            timer.Stop();
+
+                            // Întoarcem cărțile înapoi
+                            if (_firstFlippedCard != null)
+                                _firstFlippedCard.IsFlipped = false;
+
+                            if (_secondFlippedCard != null)
+                                _secondFlippedCard.IsFlipped = false;
+
+                            // Resetăm starea
+                            _firstFlippedCard = null;
+                            _secondFlippedCard = null;
+                            _isProcessingTurn = false;
+
+                            // Forțăm o actualizare a UI
+                            CommandManager.InvalidateRequerySuggested();
+                        };
+
+                        // Pornește timer-ul
+                        timer.Start();
+                    }));
                 }
             }
         }
