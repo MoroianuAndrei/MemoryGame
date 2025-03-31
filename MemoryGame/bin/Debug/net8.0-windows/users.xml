@@ -5,7 +5,11 @@
     <ImagePath>/images/user_icon/jerry.png</ImagePath>
   </User>
   <User>
-    <Username>Hatz</Username>
+    <Username>Salut</Username>
+    <ImagePath>/images/user_icon/johnny.png</ImagePath>
+  </User>
+  <User>
+    <Username>Ana</Username>
     <ImagePath>/images/user_icon/tom.png</ImagePath>
   </User>
 </ArrayOfUser>

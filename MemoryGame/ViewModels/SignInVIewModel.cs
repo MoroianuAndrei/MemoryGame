@@ -8,7 +8,6 @@ using System.Windows.Media.Imaging;
 using System.Xml.Serialization;
 using MemoryGame.Helpers;
 using MemoryGame.Models;
-using MemoryGame.Views;
 
 namespace MemoryGame.ViewModels
 {
@@ -53,12 +52,15 @@ namespace MemoryGame.ViewModels
         public ICommand PlayCommand { get; }
         public ICommand CancelCommand { get; }
 
+        // Eveniment pentru a notifica necesitatea afișării CreateUserView
+        public event EventHandler NewUserRequested;
+
         private readonly string _usersFilePath = "users.xml";
 
         public SignInViewModel()
         {
             // Inițializarea comenzilor
-            NewUserCommand = new RelayCommand(_ => OpenCreateUserView());
+            NewUserCommand = new RelayCommand(_ => OnNewUserRequested());
             DeleteUserCommand = new RelayCommand(_ => DeleteSelectedUser(), _ => SelectedUser != null);
             PlayCommand = new RelayCommand(_ => StartGame(), _ => SelectedUser != null);
             CancelCommand = new RelayCommand(_ => Application.Current.Shutdown());
@@ -123,29 +125,20 @@ namespace MemoryGame.ViewModels
             }
         }
 
-        private void OpenCreateUserView()
+        private void OnNewUserRequested()
         {
-            var createUserViewModel = new CreateUserViewModel();
-            var createUserWindow = new Window
-            {
-                Title = "Create New User",
-                Content = new CreateUserView { DataContext = createUserViewModel },
-                SizeToContent = SizeToContent.WidthAndHeight,
-                WindowStartupLocation = WindowStartupLocation.CenterOwner
-            };
+            // Declanșăm evenimentul pentru a notifica MainViewModel să afișeze CreateUserView
+            NewUserRequested?.Invoke(this, EventArgs.Empty);
+        }
 
-            createUserViewModel.RequestClose += (sender, user) =>
+        public void AddUser(User user)
+        {
+            if (user != null)
             {
-                createUserWindow.Close();
-                if (user != null)
-                {
-                    Users.Add(user);
-                    SelectedUser = user;
-                    SaveUsers();
-                }
-            };
-
-            createUserWindow.ShowDialog();
+                Users.Add(user);
+                SelectedUser = user;
+                SaveUsers();
+            }
         }
 
         private void DeleteSelectedUser()

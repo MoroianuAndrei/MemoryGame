@@ -73,8 +73,9 @@ namespace MemoryGame.ViewModels
         public ICommand NextCommand { get; }
         public ICommand PreviousCommand { get; }
         public ICommand SaveCommand { get; }
+        public ICommand CancelCommand { get; }
 
-        // Eveniment pentru a notifica închiderea ferestrei
+        // Eveniment pentru a notifica închiderea view-ului
         public event EventHandler<User> RequestClose;
 
         public CreateUserViewModel()
@@ -89,6 +90,7 @@ namespace MemoryGame.ViewModels
             NextCommand = new RelayCommand(_ => NextImage());
             PreviousCommand = new RelayCommand(_ => PreviousImage());
             SaveCommand = new RelayCommand(_ => SaveUser(), _ => CanSave);
+            CancelCommand = new RelayCommand(_ => Cancel());
         }
 
         private void UpdateImage()
@@ -136,6 +138,12 @@ namespace MemoryGame.ViewModels
 
                 RequestClose?.Invoke(this, user);
             }
+        }
+
+        private void Cancel()
+        {
+            // Închidem fără a salva niciun utilizator
+            RequestClose?.Invoke(this, null);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

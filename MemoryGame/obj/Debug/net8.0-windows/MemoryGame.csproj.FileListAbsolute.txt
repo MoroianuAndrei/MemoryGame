@@ -23,3 +23,4 @@ C:\Users\andre\Desktop\Facultate Informatica\Licenta\Anul 2\Semestrul 2\Metode A
 C:\Users\andre\Desktop\Facultate Informatica\Licenta\Anul 2\Semestrul 2\Metode Avansate de Programare\Teme\Tema 2\MemoryGame\MemoryGame\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\andre\Desktop\Facultate Informatica\Licenta\Anul 2\Semestrul 2\Metode Avansate de Programare\Teme\Tema 2\MemoryGame\MemoryGame\obj\Debug\net8.0-windows\Views\CreateUserView.g.cs
 C:\Users\andre\Desktop\Facultate Informatica\Licenta\Anul 2\Semestrul 2\Metode Avansate de Programare\Teme\Tema 2\MemoryGame\MemoryGame\obj\Debug\net8.0-windows\Views\CreateUserView.baml
+C:\Users\andre\Desktop\Facultate Informatica\Licenta\Anul 2\Semestrul 2\Metode Avansate de Programare\Teme\Tema 2\MemoryGame\MemoryGame\obj\Debug\net8.0-windows\MemoryGame.sourcelink.json
