@@ -10,15 +10,43 @@
 
   <ItemGroup>
     <None Remove="images\user_icon\bugs_bunny.png" />
+    <None Remove="images\user_icon\darwin.png" />
+    <None Remove="images\user_icon\finn.png" />
+    <None Remove="images\user_icon\fiona.png" />
+    <None Remove="images\user_icon\garfield.png" />
+    <None Remove="images\user_icon\goofy.png" />
+    <None Remove="images\user_icon\gumball.png" />
+    <None Remove="images\user_icon\jake.png" />
     <None Remove="images\user_icon\jerry.png" />
     <None Remove="images\user_icon\johnny.png" />
+    <None Remove="images\user_icon\mickey_mouse.png" />
+    <None Remove="images\user_icon\minnie_mouse.png" />
+    <None Remove="images\user_icon\patrick.png" />
+    <None Remove="images\user_icon\scooby_doo.png" />
+    <None Remove="images\user_icon\shrek.png" />
+    <None Remove="images\user_icon\spongebob.png" />
+    <None Remove="images\user_icon\stitch.png" />
     <None Remove="images\user_icon\tom.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="images\user_icon\bugs_bunny.png" />
+    <Resource Include="images\user_icon\darwin.png" />
+    <Resource Include="images\user_icon\finn.png" />
+    <Resource Include="images\user_icon\fiona.png" />
+    <Resource Include="images\user_icon\garfield.png" />
+    <Resource Include="images\user_icon\goofy.png" />
+    <Resource Include="images\user_icon\gumball.png" />
+    <Resource Include="images\user_icon\jake.png" />
     <Resource Include="images\user_icon\jerry.png" />
     <Resource Include="images\user_icon\johnny.png" />
+    <Resource Include="images\user_icon\mickey_mouse.png" />
+    <Resource Include="images\user_icon\minnie_mouse.png" />
+    <Resource Include="images\user_icon\patrick.png" />
+    <Resource Include="images\user_icon\scooby_doo.png" />
+    <Resource Include="images\user_icon\shrek.png" />
+    <Resource Include="images\user_icon\spongebob.png" />
+    <Resource Include="images\user_icon\stitch.png" />
     <Resource Include="images\user_icon\tom.png" />
   </ItemGroup>
 

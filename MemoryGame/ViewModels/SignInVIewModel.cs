@@ -8,6 +8,7 @@ using System.Windows.Media.Imaging;
 using System.Xml.Serialization;
 using MemoryGame.Helpers;
 using MemoryGame.Models;
+using MemoryGame.Views;
 
 namespace MemoryGame.ViewModels
 {
@@ -54,6 +55,9 @@ namespace MemoryGame.ViewModels
 
         // Eveniment pentru a notifica necesitatea afișării CreateUserView
         public event EventHandler NewUserRequested;
+
+        // Eveniment pentru a notifica necesitatea afișării GameView
+        public event EventHandler<User> GameRequested;
 
         private readonly string _usersFilePath = "users.xml";
 
@@ -161,11 +165,8 @@ namespace MemoryGame.ViewModels
         {
             if (SelectedUser != null)
             {
-                // Aici se va implementa logica pentru a începe jocul
-                MessageBox.Show($"Jocul începe pentru utilizatorul {SelectedUser.Username}!", "Start joc",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
-
-                // Aici se va adăuga codul pentru a deschide fereastra jocului
+                // Declanșăm evenimentul pentru a notifica MainViewModel să afișeze GameView
+                GameRequested?.Invoke(this, SelectedUser);
             }
         }
 

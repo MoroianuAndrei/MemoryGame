@@ -17,7 +17,19 @@ namespace MemoryGame.ViewModels
             "/images/user_icon/jerry.png",
             "/images/user_icon/tom.png",
             "/images/user_icon/johnny.png",
-            "/images/user_icon/bugs_bunny.png"
+            "/images/user_icon/bugs_bunny.png",
+            "/images/user_icon/mickey_mouse.png",
+            "/images/user_icon/minnie_mouse.png",
+            "/images/user_icon/goofy.png",
+            "/images/user_icon/scooby_doo.png",
+            "/images/user_icon/stitch.png",
+            "/images/user_icon/garfield.png",
+            "/images/user_icon/gumball.png",
+            "/images/user_icon/darwin.png",
+            "/images/user_icon/spongebob.png",
+            "/images/user_icon/patrick.png",
+            "/images/user_icon/finn.png",
+            "/images/user_icon/jake.png"
         };
 
         private int _currentImageIndex;

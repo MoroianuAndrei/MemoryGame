@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="MemoryGame.Views.GameView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:MemoryGame.ViewModels">
+    <UserControl.DataContext>
+        <vm:GameViewModel />
+    </UserControl.DataContext>
+    <DockPanel>
+        <!-- Menu principal -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Category">
+                    <MenuItem Header="Category 1" Command="{Binding SelectCategoryCommand}" CommandParameter="1"/>
+                    <MenuItem Header="Category 2" Command="{Binding SelectCategoryCommand}" CommandParameter="2"/>
+                    <MenuItem Header="Category 3" Command="{Binding SelectCategoryCommand}" CommandParameter="3"/>
+                </MenuItem>
+                <MenuItem Header="New Game" Command="{Binding NewGameCommand}"/>
+                <MenuItem Header="Open Game" Command="{Binding OpenGameCommand}"/>
+                <MenuItem Header="Save Game" Command="{Binding SaveGameCommand}"/>
+                <MenuItem Header="Statistics" Command="{Binding StatisticsCommand}"/>
+                <Separator/>
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}"/>
+            </MenuItem>
+            <MenuItem Header="Options">
+                <MenuItem Header="Standard (4x4)" Command="{Binding SetBoardSizeCommand}" CommandParameter="Standard"/>
+                <MenuItem Header="Custom" Command="{Binding SetBoardSizeCommand}" CommandParameter="Custom"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Command="{Binding AboutCommand}"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Game area -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Game info panel -->
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Player: " Margin="0,0,5,0"/>
+                <TextBlock Text="{Binding CurrentPlayer.Username}" FontWeight="Bold" Margin="0,0,20,0"/>
+                <TextBlock Text="Score: " Margin="0,0,5,0"/>
+                <TextBlock Text="{Binding CurrentScore}" FontWeight="Bold" Margin="0,0,20,0"/>
+                <TextBlock Text="Time: " Margin="0,0,5,0"/>
+                <TextBlock Text="{Binding ElapsedTime}" FontWeight="Bold"/>
+            </StackPanel>
+
+            <!-- Game board -->
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding Cards}" Margin="10">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Rows="{Binding BoardRows}" Columns="{Binding BoardColumns}"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Command="{Binding DataContext.FlipCardCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                CommandParameter="{Binding}" 
+                                Margin="5" 
+                                Height="80" 
+                                Width="80">
+                            <Image Source="{Binding DisplayImage}"/>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </DockPanel>
+</UserControl>

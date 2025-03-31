@@ -3,13 +3,25 @@
   <User>
     <Username>Andrei</Username>
     <ImagePath>/images/user_icon/jerry.png</ImagePath>
+    <GamesPlayed>0</GamesPlayed>
+    <GamesWon>0</GamesWon>
+    <TotalScore>0</TotalScore>
+    <TotalPlayTime>PT0S</TotalPlayTime>
   </User>
   <User>
     <Username>Salut</Username>
     <ImagePath>/images/user_icon/johnny.png</ImagePath>
+    <GamesPlayed>0</GamesPlayed>
+    <GamesWon>0</GamesWon>
+    <TotalScore>0</TotalScore>
+    <TotalPlayTime>PT0S</TotalPlayTime>
   </User>
   <User>
     <Username>Ana</Username>
     <ImagePath>/images/user_icon/tom.png</ImagePath>
+    <GamesPlayed>0</GamesPlayed>
+    <GamesWon>0</GamesWon>
+    <TotalScore>0</TotalScore>
+    <TotalPlayTime>PT0S</TotalPlayTime>
   </User>
 </ArrayOfUser>

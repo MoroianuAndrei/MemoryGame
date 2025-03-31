@@ -21,12 +21,14 @@ namespace MemoryGame.ViewModels
 
         private SignInViewModel _signInViewModel;
         private CreateUserViewModel _createUserViewModel;
+        private GameViewModel _gameViewModel;
 
         public MainViewModel()
         {
             // Inițializăm SignInViewModel și setăm CurrentView la SignInView
             _signInViewModel = new SignInViewModel();
             _signInViewModel.NewUserRequested += OnNewUserRequested;
+            _signInViewModel.GameRequested += OnGameRequested;
 
             // Afișăm SignInView la început
             CurrentView = new SignInView() { DataContext = _signInViewModel };
@@ -41,6 +43,15 @@ namespace MemoryGame.ViewModels
             CurrentView = new CreateUserView() { DataContext = _createUserViewModel };
         }
 
+        private void OnGameRequested(object sender, User user)
+        {
+            // Creăm și afișăm GameView
+            _gameViewModel = new GameViewModel { CurrentPlayer = user };
+            _gameViewModel.ReturnToSignIn += OnReturnToSignIn;
+
+            CurrentView = new GameView() { DataContext = _gameViewModel };
+        }
+
         private void OnCreateUserClosed(object sender, User user)
         {
             // Revenim la SignInView și adăugăm noul utilizator dacă există
@@ -49,6 +60,12 @@ namespace MemoryGame.ViewModels
                 _signInViewModel.AddUser(user);
             }
 
+            CurrentView = new SignInView() { DataContext = _signInViewModel };
+        }
+
+        private void OnReturnToSignIn(object sender, System.EventArgs e)
+        {
+            // Revenim la SignInView
             CurrentView = new SignInView() { DataContext = _signInViewModel };
         }
 
