@@ -89,7 +89,7 @@ namespace MemoryGame.ViewModels
         private Card _firstFlippedCard;
         private Card _secondFlippedCard;
         private bool _isProcessingTurn;
-        private TimeSpan _currentElapsedTime;
+        private int _secondsRemaining = 30; // Countdown timer starts at 30 seconds
         private int _moves;
 
         public ICommand SelectCategoryCommand { get; }
@@ -125,15 +125,32 @@ namespace MemoryGame.ViewModels
             _gameTimer.Tick += GameTimer_Tick;
 
             // Valor inițiale
-            ElapsedTime = "00:00:00";
+            ElapsedTime = "00:30";
             CurrentScore = 0;
-            _currentElapsedTime = TimeSpan.Zero;
         }
 
         private void GameTimer_Tick(object sender, EventArgs e)
         {
-            _currentElapsedTime = _currentElapsedTime.Add(TimeSpan.FromSeconds(1));
-            ElapsedTime = _currentElapsedTime.ToString("hh\\:mm\\:ss");
+            _secondsRemaining--;
+
+            // Format the time as mm:ss
+            int minutes = _secondsRemaining / 60;
+            int seconds = _secondsRemaining % 60;
+            ElapsedTime = $"{minutes:D2}:{seconds:D2}";
+
+            // Check if time's up
+            if (_secondsRemaining <= 0)
+            {
+                _gameTimer.Stop();
+                MessageBox.Show("Time's up! Game over.", "Game Over", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                // Display final score
+                MessageBox.Show($"Your final score: {CurrentScore}\nMoves: {_moves}",
+                    "Game Results", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                // Save game statistics
+                SaveGameStatistics(TimeSpan.FromSeconds(30));
+            }
         }
 
         private void SelectCategory(int categoryId)
@@ -146,8 +163,8 @@ namespace MemoryGame.ViewModels
         {
             // Resetăm timer-ul și scorul
             _gameTimer.Stop();
-            _currentElapsedTime = TimeSpan.Zero;
-            ElapsedTime = "00:00:00";
+            _secondsRemaining = 30;
+            ElapsedTime = "00:30";
             CurrentScore = 0;
             _moves = 0;
             _firstFlippedCard = null;
@@ -270,7 +287,7 @@ namespace MemoryGame.ViewModels
 
         private bool CanFlipCard(Card card)
         {
-            return card != null && !card.IsFlipped && !card.IsMatched && !_isProcessingTurn;
+            return card != null && !card.IsFlipped && !card.IsMatched && !_isProcessingTurn && _secondsRemaining > 0;
         }
 
         private void FlipCard(Card card)
@@ -354,15 +371,19 @@ namespace MemoryGame.ViewModels
             {
                 _gameTimer.Stop();
 
-                // Calculăm timpul total de joc
-                TimeSpan gameDuration = DateTime.Now - _gameStartTime;
+                // Calculăm timpul rămas
+                int timeRemaining = _secondsRemaining;
+
+                // Adăugăm bonus pentru timpul rămas
+                int timeBonus = timeRemaining * 2;
+                CurrentScore += timeBonus;
 
                 // Afișăm mesaj de felicitare
-                MessageBox.Show($"Congratulations! You've completed the game!\n\nScore: {CurrentScore}\nTime: {ElapsedTime}\nMoves: {_moves}",
+                MessageBox.Show($"Congratulations! You've completed the game!\n\nScore: {CurrentScore}\nTime Bonus: +{timeBonus}\nTime Remaining: {timeRemaining} seconds\nMoves: {_moves}",
                     "Game Complete", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 // Salvăm statisticile pentru jocul curent
-                SaveGameStatistics(gameDuration);
+                SaveGameStatistics(TimeSpan.FromSeconds(30 - _secondsRemaining));
             }
         }
 
