@@ -129,6 +129,7 @@ namespace MemoryGame.ViewModels
             CurrentScore = 0;
         }
 
+        // We also need to update the GameTimer_Tick method to handle variable start times
         private void GameTimer_Tick(object sender, EventArgs e)
         {
             _secondsRemaining--;
@@ -148,8 +149,11 @@ namespace MemoryGame.ViewModels
                 MessageBox.Show($"Your final score: {CurrentScore}\nMoves: {_moves}",
                     "Game Results", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                // Save game statistics
-                SaveGameStatistics(TimeSpan.FromSeconds(30));
+                // Save game statistics - use the total time that was allocated
+                int totalCards = BoardRows * BoardColumns;
+                int totalTime = totalCards * 2;
+                totalTime = (int)Math.Ceiling(totalTime / 10.0) * 10;
+                SaveGameStatistics(TimeSpan.FromSeconds(totalTime));
             }
         }
 
@@ -163,8 +167,18 @@ namespace MemoryGame.ViewModels
         {
             // Resetăm timer-ul și scorul
             _gameTimer.Stop();
-            _secondsRemaining = 30;
-            ElapsedTime = "00:30";
+
+            // Calculate timer based on number of cards
+            int totalCards = BoardRows * BoardColumns;
+            _secondsRemaining = totalCards * 2;
+            // Round up to nearest 10
+            _secondsRemaining = (int)Math.Ceiling(_secondsRemaining / 10.0) * 10;
+
+            // Update timer display
+            int minutes = _secondsRemaining / 60;
+            int seconds = _secondsRemaining % 60;
+            ElapsedTime = $"{minutes:D2}:{seconds:D2}";
+
             CurrentScore = 0;
             _moves = 0;
             _firstFlippedCard = null;
@@ -382,8 +396,13 @@ namespace MemoryGame.ViewModels
                 MessageBox.Show($"Congratulations! You've completed the game!\n\nScore: {CurrentScore}\nTime Bonus: +{timeBonus}\nTime Remaining: {timeRemaining} seconds\nMoves: {_moves}",
                     "Game Complete", MessageBoxButton.OK, MessageBoxImage.Information);
 
+                // Calculate the total allocated time
+                int totalCards = BoardRows * BoardColumns;
+                int totalTime = totalCards * 2;
+                totalTime = (int)Math.Ceiling(totalTime / 10.0) * 10;
+
                 // Salvăm statisticile pentru jocul curent
-                SaveGameStatistics(TimeSpan.FromSeconds(30 - _secondsRemaining));
+                SaveGameStatistics(TimeSpan.FromSeconds(totalTime - _secondsRemaining));
             }
         }
 
