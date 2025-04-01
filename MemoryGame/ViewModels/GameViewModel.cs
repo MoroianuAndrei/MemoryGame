@@ -89,7 +89,7 @@ namespace MemoryGame.ViewModels
         private Card _firstFlippedCard;
         private Card _secondFlippedCard;
         private bool _isProcessingTurn;
-        private int _secondsRemaining = 30; // Countdown timer starts at 30 seconds
+        private int _secondsRemaining = 0; // Countdown timer starts at 30 seconds
         private int _moves;
 
         public ICommand SelectCategoryCommand { get; }
@@ -125,7 +125,7 @@ namespace MemoryGame.ViewModels
             _gameTimer.Tick += GameTimer_Tick;
 
             // Valor inițiale
-            ElapsedTime = "00:30";
+            ElapsedTime = "00:00";
             CurrentScore = 0;
         }
 

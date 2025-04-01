@@ -3,116 +3,116 @@
   <User>
     <Username>Andrei</Username>
     <ImagePath>/images/user_icon/jerry.png</ImagePath>
-    <GamesPlayed>4</GamesPlayed>
-    <GamesWon>3</GamesWon>
-    <TotalScore>322</TotalScore>
-    <TotalPlayTime>PT2M49S</TotalPlayTime>
+    <GamesPlayed>6</GamesPlayed>
+    <GamesWon>4</GamesWon>
+    <TotalScore>460</TotalScore>
+    <TotalPlayTime>PT4M5S</TotalPlayTime>
   </User>
   <SavedGame>
     <Username>Andrei</Username>
-    <SaveDate>2025-04-01T14:17:12.4812259+03:00</SaveDate>
+    <SaveDate>2025-04-01T14:34:40.7582198+03:00</SaveDate>
     <BoardRows>4</BoardRows>
     <BoardColumns>4</BoardColumns>
     <Category>1</Category>
-    <ElapsedTime>PT25S</ElapsedTime>
-    <Score>110</Score>
-    <Moves>16</Moves>
+    <ElapsedTime>PT5S</ElapsedTime>
+    <Score>10</Score>
+    <Moves>2</Moves>
     <CardStates>
       <CardState>
         <Id>0</Id>
-        <ImageId>3</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>5</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>1</Id>
-        <ImageId>4</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>1</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>2</Id>
-        <ImageId>6</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>2</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>3</Id>
-        <ImageId>4</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>6</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>4</Id>
-        <ImageId>1</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>7</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>5</Id>
-        <ImageId>8</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>5</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>6</Id>
-        <ImageId>7</ImageId>
+        <ImageId>4</ImageId>
         <IsFlipped>true</IsFlipped>
         <IsMatched>true</IsMatched>
       </CardState>
       <CardState>
         <Id>7</Id>
-        <ImageId>7</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>1</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>8</Id>
-        <ImageId>8</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>3</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>9</Id>
-        <ImageId>3</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>2</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>10</Id>
-        <ImageId>2</ImageId>
+        <ImageId>4</ImageId>
         <IsFlipped>true</IsFlipped>
         <IsMatched>true</IsMatched>
       </CardState>
       <CardState>
         <Id>11</Id>
-        <ImageId>5</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>6</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>12</Id>
-        <ImageId>1</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>3</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>13</Id>
-        <ImageId>5</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>7</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>14</Id>
-        <ImageId>6</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>8</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
       <CardState>
         <Id>15</Id>
-        <ImageId>2</ImageId>
-        <IsFlipped>true</IsFlipped>
-        <IsMatched>true</IsMatched>
+        <ImageId>8</ImageId>
+        <IsFlipped>false</IsFlipped>
+        <IsMatched>false</IsMatched>
       </CardState>
     </CardStates>
   </SavedGame>
