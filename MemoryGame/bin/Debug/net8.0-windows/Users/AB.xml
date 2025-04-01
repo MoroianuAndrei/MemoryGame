@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Username>AB</Username>
+    <ImagePath>/images/user_icon/jerry.png</ImagePath>
+    <GamesPlayed>1</GamesPlayed>
+    <GamesWon>1</GamesWon>
+  </User>
+</UserData>

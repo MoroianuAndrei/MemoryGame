@@ -234,22 +234,252 @@ namespace MemoryGame.ViewModels
             }
         }
 
-        private void OpenSavedGame()
-        {
-            // Implementare pentru deschiderea unui joc salvat
-            // ...
-        }
-
         private void SaveGame()
         {
-            // Implementare pentru salvarea jocului curent
-            // ...
+            try
+            {
+                // Create a SavedGame object to store the current game state
+                var savedGame = new SavedGame
+                {
+                    Username = CurrentPlayer.Username,
+                    SaveDate = DateTime.Now,
+                    BoardRows = BoardRows,
+                    BoardColumns = BoardColumns,
+                    Category = _selectedCategory,
+                    Score = CurrentScore,
+                    Moves = _moves
+                };
+
+                // Calculate elapsed time from the remaining seconds
+                int totalCards = BoardRows * BoardColumns;
+                int totalTime = totalCards * 2;
+                totalTime = (int)Math.Ceiling(totalTime / 10.0) * 10;
+                savedGame.ElapsedTime = TimeSpan.FromSeconds(totalTime - _secondsRemaining);
+
+                // Save the state of each card
+                savedGame.CardStates = new List<CardState>();
+                foreach (var card in Cards)
+                {
+                    // Extract the image ID from the front image URI
+                    string frontImagePath = card.FrontImage.ToString();
+                    int imageId = 0;
+
+                    // Parse the image ID from the image path
+                    string[] parts = frontImagePath.Split('/');
+                    string fileName = parts[parts.Length - 1];
+                    string fileNameWithoutExtension = fileName.Split('.')[0];
+                    if (fileNameWithoutExtension.StartsWith("Photo"))
+                    {
+                        int.TryParse(fileNameWithoutExtension.Substring(5), out imageId);
+                    }
+
+                    savedGame.CardStates.Add(new CardState
+                    {
+                        Id = card.Id,
+                        ImageId = imageId,
+                        IsFlipped = card.IsFlipped,
+                        IsMatched = card.IsMatched
+                    });
+                }
+
+                // Path to the user's XML file
+                string userDirectory = "Users";
+                string userFilePath = Path.Combine(userDirectory, $"{CurrentPlayer.Username}.xml");
+
+                if (File.Exists(userFilePath))
+                {
+                    try
+                    {
+                        // Load the existing user data
+                        XmlSerializer serializer = new XmlSerializer(typeof(UserData));
+                        UserData userData;
+
+                        using (FileStream fs = new FileStream(userFilePath, FileMode.Open))
+                        {
+                            userData = (UserData)serializer.Deserialize(fs);
+                        }
+
+                        // Update the saved game
+                        userData.SavedGame = savedGame;
+
+                        // Save the updated user data
+                        using (FileStream fs = new FileStream(userFilePath, FileMode.Create))
+                        {
+                            serializer.Serialize(fs, userData);
+                        }
+
+                        MessageBox.Show($"Game saved successfully for {CurrentPlayer.Username}!", "Game Saved",
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error saving game: {ex.Message}", "Save Error",
+                            MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"User file for {CurrentPlayer.Username} not found.", "Save Error",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error preparing game save: {ex.Message}", "Save Error",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void OpenSavedGame()
+        {
+            try
+            {
+                // Path to the user's XML file
+                string userDirectory = "Users";
+                string userFilePath = Path.Combine(userDirectory, $"{CurrentPlayer.Username}.xml");
+
+                if (!File.Exists(userFilePath))
+                {
+                    MessageBox.Show($"No user file found for {CurrentPlayer.Username}.", "No Saved Game",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
+                // Load the user data
+                XmlSerializer serializer = new XmlSerializer(typeof(UserData));
+                UserData userData;
+
+                using (FileStream fs = new FileStream(userFilePath, FileMode.Open))
+                {
+                    userData = (UserData)serializer.Deserialize(fs);
+                }
+
+                // Check if there's a saved game
+                if (userData.SavedGame == null)
+                {
+                    MessageBox.Show($"No saved game found for {CurrentPlayer.Username}.", "No Saved Game",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
+                SavedGame savedGame = userData.SavedGame;
+
+                // Stop the current game timer
+                _gameTimer.Stop();
+
+                // Restore game settings
+                BoardRows = savedGame.BoardRows;
+                BoardColumns = savedGame.BoardColumns;
+                _selectedCategory = savedGame.Category;
+                CurrentScore = savedGame.Score;
+                _moves = savedGame.Moves;
+
+                // Calculate remaining time
+                int totalCards = BoardRows * BoardColumns;
+                int totalTime = totalCards * 2;
+                totalTime = (int)Math.Ceiling(totalTime / 10.0) * 10;
+                _secondsRemaining = totalTime - (int)savedGame.ElapsedTime.TotalSeconds;
+
+                // Update timer display
+                int minutes = _secondsRemaining / 60;
+                int seconds = _secondsRemaining % 60;
+                ElapsedTime = $"{minutes:D2}:{seconds:D2}";
+
+                // Reset card tracking
+                _firstFlippedCard = null;
+                _secondFlippedCard = null;
+                _isProcessingTurn = false;
+
+                // Restore the cards
+                Cards = new ObservableCollection<Card>();
+                BitmapImage backImage = new BitmapImage(new Uri($"pack://application:,,,/Images/Game/Background.png", UriKind.Absolute));
+
+                foreach (var cardState in savedGame.CardStates)
+                {
+                    BitmapImage frontImage = new BitmapImage(
+                        new Uri($"pack://application:,,,/Images/Game/Category{_selectedCategory}/Photo{cardState.ImageId}.png", UriKind.Absolute));
+
+                    var card = new Card(cardState.Id, frontImage, backImage)
+                    {
+                        IsFlipped = cardState.IsFlipped,
+                        IsMatched = cardState.IsMatched
+                    };
+
+                    Cards.Add(card);
+                }
+
+                // Start the timer for the loaded game
+                _gameTimer.Start();
+
+                MessageBox.Show($"Game loaded successfully for {CurrentPlayer.Username}!", "Game Loaded",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading game: {ex.Message}", "Load Error",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void ShowStatistics()
         {
-            // Implementare pentru afișarea statisticilor
-            // ...
+            try
+            {
+                // Directory containing user files
+                string userDirectory = "Users";
+
+                // List to hold all users' statistics
+                List<UserStatistics> allUsersStats = new List<UserStatistics>();
+
+                // Get all user XML files
+                if (Directory.Exists(userDirectory))
+                {
+                    string[] userFiles = Directory.GetFiles(userDirectory, "*.xml");
+
+                    foreach (string userFile in userFiles)
+                    {
+                        try
+                        {
+                            // Load user data from XML file
+                            XmlSerializer serializer = new XmlSerializer(typeof(UserData));
+
+                            using (FileStream fs = new FileStream(userFile, FileMode.Open))
+                            {
+                                UserData userData = (UserData)serializer.Deserialize(fs);
+
+                                // Create statistics object for each user
+                                UserStatistics userStats = new UserStatistics
+                                {
+                                    Username = userData.User.Username,
+                                    GamesPlayed = userData.User.GamesPlayed,
+                                    GamesWon = userData.User.GamesWon
+                                };
+
+                                allUsersStats.Add(userStats);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error loading user from {userFile}: {ex.Message}", "Statistics Error",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+
+                    // Create and show statistics dialog
+                    var statsDialog = new StatisticsDialog(allUsersStats);
+                    statsDialog.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("User directory not found.", "Statistics Error",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading statistics: {ex.Message}", "Statistics Error",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void Exit()
@@ -408,8 +638,49 @@ namespace MemoryGame.ViewModels
 
         private void SaveGameStatistics(TimeSpan duration)
         {
-            // Implementare pentru salvarea statisticilor după finalizarea jocului
-            // ...
+            try
+            {
+                // Path to the user's XML file
+                string userDirectory = "Users";
+                string userFilePath = Path.Combine(userDirectory, $"{CurrentPlayer.Username}.xml");
+
+                if (!File.Exists(userFilePath))
+                {
+                    MessageBox.Show($"User file for {CurrentPlayer.Username} not found.", "Statistics Error",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                // Load the existing user data
+                XmlSerializer serializer = new XmlSerializer(typeof(UserData));
+                UserData userData;
+
+                using (FileStream fs = new FileStream(userFilePath, FileMode.Open))
+                {
+                    userData = (UserData)serializer.Deserialize(fs);
+                }
+
+                // Update the user statistics
+                userData.User.GamesPlayed++; // Increment games played
+
+                // Check if the game was won (all cards matched)
+                bool gameWon = Cards != null && Cards.All(c => c.IsMatched);
+                if (gameWon)
+                {
+                    userData.User.GamesWon++; // Increment games won
+                }
+
+                // Save the updated user data
+                using (FileStream fs = new FileStream(userFilePath, FileMode.Create))
+                {
+                    serializer.Serialize(fs, userData);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving game statistics: {ex.Message}", "Statistics Error",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

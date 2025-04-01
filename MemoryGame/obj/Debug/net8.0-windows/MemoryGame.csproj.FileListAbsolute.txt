@@ -30,3 +30,5 @@ C:\Users\andre\Desktop\Facultate Informatica\Licenta\Anul 2\Semestrul 2\Metode A
 C:\Users\andre\Desktop\Facultate Informatica\Licenta\Anul 2\Semestrul 2\Metode Avansate de Programare\Teme\Tema 2\MemoryGame\MemoryGame\obj\Debug\net8.0-windows\Views\CustomBoardDialog.baml
 C:\Users\andre\Desktop\Facultate Informatica\Licenta\Anul 2\Semestrul 2\Metode Avansate de Programare\Teme\Tema 2\MemoryGame\MemoryGame\obj\Debug\net8.0-windows\Views\CustomBoardDialog.g.cs
 C:\Users\andre\Desktop\Facultate Informatica\Licenta\Anul 2\Semestrul 2\Metode Avansate de Programare\Teme\Tema 2\MemoryGame\MemoryGame\obj\Debug\net8.0-windows\Views\GameView.baml
+C:\Users\andre\Desktop\Facultate Informatica\Licenta\Anul 2\Semestrul 2\Metode Avansate de Programare\Teme\Tema 2\MemoryGame\MemoryGame\obj\Debug\net8.0-windows\Views\StatisticsDialog.baml
+C:\Users\andre\Desktop\Facultate Informatica\Licenta\Anul 2\Semestrul 2\Metode Avansate de Programare\Teme\Tema 2\MemoryGame\MemoryGame\obj\Debug\net8.0-windows\Views\StatisticsDialog.g.cs

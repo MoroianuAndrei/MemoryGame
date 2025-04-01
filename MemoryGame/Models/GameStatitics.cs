@@ -20,8 +20,7 @@ namespace MemoryGame.Models
         public string Username { get; set; }
         public int GamesPlayed { get; set; }
         public int GamesWon { get; set; }
-        public int TotalMoves { get; set; }
-        public TimeSpan TotalPlayTime { get; set; }
+        public double WinRate { get; set; }
         public List<GameStatistics> RecentGames { get; set; } = new List<GameStatistics>();
     }
 }
