@@ -59,9 +59,26 @@
                         <Button Command="{Binding DataContext.FlipCardCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                 CommandParameter="{Binding}" 
                                 Margin="5" 
-                                Height="80" 
-                                Width="80">
-                            <Image Source="{Binding DisplayImage}"/>
+                                Height="auto" 
+                                Width="auto"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch">
+                            <Image Source="{Binding DisplayImage}"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch">
+                                <Image.Style>
+                                    <Style TargetType="Image">
+                                        <Setter Property="Stretch" Value="Fill"/>
+                                        <!-- Implicit: Fill pentru spate -->
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsFlipped}" Value="True">
+                                                <Setter Property="Stretch" Value="Uniform"/>
+                                                <!-- Când e întoarsă, păstrează proporțiile -->
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
                         </Button>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
