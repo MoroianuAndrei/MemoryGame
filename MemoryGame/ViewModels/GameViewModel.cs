@@ -452,7 +452,9 @@ namespace MemoryGame.ViewModels
                                 {
                                     Username = userData.User.Username,
                                     GamesPlayed = userData.User.GamesPlayed,
-                                    GamesWon = userData.User.GamesWon
+                                    GamesWon = userData.User.GamesWon,
+                                    TotalScore = userData.User.TotalScore,
+                                    TotalPlayTime = userData.User.TotalPlayTime
                                 };
 
                                 allUsersStats.Add(userStats);
@@ -662,6 +664,12 @@ namespace MemoryGame.ViewModels
 
                 // Update the user statistics
                 userData.User.GamesPlayed++; // Increment games played
+
+                // Add current game score to total score
+                userData.User.TotalScore += CurrentScore;
+
+                // Add the current game's duration to total play time
+                userData.User.TotalPlayTime += duration;
 
                 // Check if the game was won (all cards matched)
                 bool gameWon = Cards != null && Cards.All(c => c.IsMatched);

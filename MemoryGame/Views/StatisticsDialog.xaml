@@ -15,23 +15,25 @@
                    FontSize="22" FontWeight="Bold" Margin="0,0,0,10"/>
 
         <DataGrid Grid.Row="1" Name="StatsDataGrid" 
-                  AutoGenerateColumns="False" 
-                  IsReadOnly="True"
-                  CanUserAddRows="False"
-                  CanUserDeleteRows="False"
-                  CanUserReorderColumns="False"
-                  CanUserResizeRows="False"
-                  CanUserSortColumns="True"
-                  HeadersVisibility="Column"
-                  AlternatingRowBackground="LightGray"
-                  BorderThickness="1"
-                  BorderBrush="Gray"
-                  Margin="0,0,0,10">
+          AutoGenerateColumns="False" 
+          IsReadOnly="True"
+          CanUserAddRows="False"
+          CanUserDeleteRows="False"
+          CanUserReorderColumns="False"
+          CanUserResizeRows="False"
+          CanUserSortColumns="True"
+          HeadersVisibility="Column"
+          AlternatingRowBackground="LightGray"
+          BorderThickness="1"
+          BorderBrush="Gray"
+          Margin="0,0,0,10">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Player Name" Binding="{Binding Username}" Width="*"/>
                 <DataGridTextColumn Header="Games Played" Binding="{Binding GamesPlayed}" Width="*"/>
                 <DataGridTextColumn Header="Games Won" Binding="{Binding GamesWon}" Width="*"/>
                 <DataGridTextColumn Header="Win Rate (%)" Binding="{Binding WinRate}" Width="*"/>
+                <DataGridTextColumn Header="Total Score" Binding="{Binding TotalScore}" Width="*"/>
+                <DataGridTextColumn Header="Total Play Time" Binding="{Binding FormattedPlayTime}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 

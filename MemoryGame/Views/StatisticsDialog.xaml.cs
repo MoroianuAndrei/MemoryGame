@@ -14,7 +14,7 @@ namespace MemoryGame.Views
         {
             InitializeComponent();
 
-            // Calculate win rate for each user
+            // Calculate win rate for each user and format playtime
             foreach (var stat in statistics)
             {
                 if (stat.GamesPlayed > 0)
@@ -25,6 +25,10 @@ namespace MemoryGame.Views
                 {
                     stat.WinRate = 0;
                 }
+
+                // Format the playtime as a string (hours:minutes:seconds)
+                TimeSpan playTime = stat.TotalPlayTime;
+                stat.FormattedPlayTime = $"{playTime.Hours:D2}:{playTime.Minutes:D2}:{playTime.Seconds:D2}";
             }
 
             // Sort by win rate descending
