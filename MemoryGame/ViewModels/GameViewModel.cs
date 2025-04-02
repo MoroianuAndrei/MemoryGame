@@ -91,6 +91,8 @@ namespace MemoryGame.ViewModels
         private bool _isProcessingTurn;
         private int _secondsRemaining = 0; // Countdown timer starts at 30 seconds
         private int _moves;
+        private int _pendingBoardRows = 4;
+        private int _pendingBoardColumns = 4;
 
         public ICommand SelectCategoryCommand { get; }
         public ICommand NewGameCommand { get; }
@@ -154,6 +156,9 @@ namespace MemoryGame.ViewModels
                 int totalTime = totalCards * 2;
                 totalTime = (int)Math.Ceiling(totalTime / 10.0) * 10;
                 SaveGameStatistics(TimeSpan.FromSeconds(totalTime));
+
+                // Reset game state after time's up
+                ResetGameState();
             }
         }
 
@@ -165,16 +170,18 @@ namespace MemoryGame.ViewModels
 
         private void StartNewGame()
         {
-            // Resetăm timer-ul și scorul
+            // Oprești timer-ul jocului curent
             _gameTimer.Stop();
 
-            // Calculate timer based on number of cards
+            // Actualizează dimensiunile tablei de joc cu setările din așteptare
+            BoardRows = _pendingBoardRows;
+            BoardColumns = _pendingBoardColumns;
+
+            // Calculează timpul de start, resetează scorul și creează o nouă tablă
             int totalCards = BoardRows * BoardColumns;
             _secondsRemaining = totalCards * 2;
-            // Round up to nearest 10
             _secondsRemaining = (int)Math.Ceiling(_secondsRemaining / 10.0) * 10;
 
-            // Update timer display
             int minutes = _secondsRemaining / 60;
             int seconds = _secondsRemaining % 60;
             ElapsedTime = $"{minutes:D2}:{seconds:D2}";
@@ -185,13 +192,12 @@ namespace MemoryGame.ViewModels
             _secondFlippedCard = null;
             _isProcessingTurn = false;
 
-            // Creăm cărțile pentru joc
             CreateGameBoard();
 
-            // Începem cronometrarea
             _gameStartTime = DateTime.Now;
             _gameTimer.Start();
         }
+
 
         private void CreateGameBoard()
         {
@@ -508,23 +514,27 @@ namespace MemoryGame.ViewModels
 
         private void SetBoardSize(string sizeType)
         {
+            // Setăm dimensiunile în așteptare, care vor fi aplicate doar când jocul începe
             if (sizeType == "Standard")
             {
-                BoardRows = 4;
-                BoardColumns = 4;
+                _pendingBoardRows = 4;
+                _pendingBoardColumns = 4;
+                MessageBox.Show("Board size set to Standard (4x4). Press New Game to start.",
+                    "Board Size Changed", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else if (sizeType == "Custom")
             {
-                // Afișăm dialogul pentru setarea dimensiunii personalizate
                 var dialog = new CustomBoardDialog();
                 if (dialog.ShowDialog() == true)
                 {
-                    BoardRows = dialog.SelectedRows;
-                    BoardColumns = dialog.SelectedColumns;
+                    _pendingBoardRows = dialog.SelectedRows;
+                    _pendingBoardColumns = dialog.SelectedColumns;
+                    MessageBox.Show($"Board size set to Custom ({dialog.SelectedRows}x{dialog.SelectedColumns}). Press New Game to start.",
+                        "Board Size Changed", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }
-
+        
         private void ShowAboutDialog()
         {
             var dialog = new AboutDialog();
@@ -610,6 +620,29 @@ namespace MemoryGame.ViewModels
             }
         }
 
+        private void ResetGameState()
+        {
+            // Oprește timer-ul
+            _gameTimer.Stop();
+
+            // Resetează scorul și timpul afișat
+            CurrentScore = 0;
+            ElapsedTime = "00:00";
+
+            // Șterge toate cărțile din joc
+            Cards = null; // Sau Cards.Clear(); dacă preferi să păstrezi lista goală
+
+            // Resetează selecțiile și starea jocului
+            _firstFlippedCard = null;
+            _secondFlippedCard = null;
+            _isProcessingTurn = false;
+
+            // Notifică UI-ul despre schimbări
+            OnPropertyChanged(nameof(CurrentScore));
+            OnPropertyChanged(nameof(ElapsedTime));
+            OnPropertyChanged(nameof(Cards));
+        }
+
         private void CheckGameCompletion()
         {
             // Verificăm dacă toate cărțile au fost potrivite
@@ -635,6 +668,9 @@ namespace MemoryGame.ViewModels
 
                 // Salvăm statisticile pentru jocul curent
                 SaveGameStatistics(TimeSpan.FromSeconds(totalTime - _secondsRemaining));
+
+                // Revine la starea inițială a jocului
+                ResetGameState();
             }
         }
 

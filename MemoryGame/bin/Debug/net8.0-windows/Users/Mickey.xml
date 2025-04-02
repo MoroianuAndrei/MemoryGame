@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Username>Mickey</Username>
+    <ImagePath>/images/user_icon/mickey_mouse.png</ImagePath>
+    <GamesPlayed>10</GamesPlayed>
+    <GamesWon>5</GamesWon>
+    <TotalScore>614</TotalScore>
+    <TotalPlayTime>PT5M28S</TotalPlayTime>
+  </User>
+</UserData>

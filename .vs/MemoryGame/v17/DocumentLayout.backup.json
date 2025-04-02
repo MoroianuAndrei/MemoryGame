@@ -122,8 +122,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 6,
@@ -134,8 +138,7 @@
               "RelativeToolTip": "MemoryGame\\Helpers\\RelayCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T11:32:34.797Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T11:32:34.797Z"
             },
             {
               "$type": "Document",
@@ -143,9 +146,9 @@
               "Title": "GameViewModel.cs",
               "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\ViewModels\\GameViewModel.cs",
               "RelativeDocumentMoniker": "MemoryGame\\ViewModels\\GameViewModel.cs",
-              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\ViewModels\\GameViewModel.cs*",
-              "RelativeToolTip": "MemoryGame\\ViewModels\\GameViewModel.cs*",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAIwH8AAAAfAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\ViewModels\\GameViewModel.cs",
+              "RelativeToolTip": "MemoryGame\\ViewModels\\GameViewModel.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAADwv5sAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T11:35:42.864Z",
               "EditorCaption": ""
@@ -159,8 +162,7 @@
               "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Views\\CreateUserView.xaml",
               "RelativeToolTip": "MemoryGame\\Views\\CreateUserView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-31T11:20:21.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:20:21.467Z"
             },
             {
               "$type": "Document",
@@ -172,8 +174,7 @@
               "RelativeToolTip": "MemoryGame\\Models\\GameStatitics.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:34:59.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:34:59.212Z"
             },
             {
               "$type": "Document",
@@ -184,8 +185,7 @@
               "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Views\\GameView.xaml",
               "RelativeToolTip": "MemoryGame\\Views\\GameView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-31T11:30:23.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:30:23.451Z"
             },
             {
               "$type": "Document",
@@ -197,8 +197,7 @@
               "RelativeToolTip": "MemoryGame\\ViewModels\\CreateUserViewModel.cs",
               "ViewState": "AgIAAJYAAAAAAAAAAAAuwKYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:18:41.976Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:18:41.976Z"
             },
             {
               "$type": "Document",
@@ -210,8 +209,7 @@
               "RelativeToolTip": "MemoryGame\\Models\\SavedGame.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAA9wBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:35:22.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:35:22.676Z"
             },
             {
               "$type": "Document",
@@ -223,8 +221,7 @@
               "RelativeToolTip": "MemoryGame\\Models\\User.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAAACYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:36:18.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:36:18.303Z"
             },
             {
               "$type": "Document",
@@ -235,8 +232,7 @@
               "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Views\\AboutDialog.xaml",
               "RelativeToolTip": "MemoryGame\\Views\\AboutDialog.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-31T11:34:08.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:34:08.641Z"
             },
             {
               "$type": "Document",
@@ -248,8 +244,7 @@
               "RelativeToolTip": "MemoryGame\\Views\\StatisticsDialog.xaml.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAgwCYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T10:22:56.33Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T10:22:56.33Z"
             },
             {
               "$type": "Document",
@@ -261,8 +256,7 @@
               "RelativeToolTip": "MemoryGame\\Views\\GameView.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:30:42.083Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:30:42.083Z"
             },
             {
               "$type": "Document",
@@ -273,8 +267,7 @@
               "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Views\\StatisticsDialog.xaml",
               "RelativeToolTip": "MemoryGame\\Views\\StatisticsDialog.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-01T10:22:42.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T10:22:42.381Z"
             },
             {
               "$type": "Document",
@@ -285,8 +278,7 @@
               "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Views\\SignInView.xaml",
               "RelativeToolTip": "MemoryGame\\Views\\SignInView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-31T11:29:01.607Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:29:01.607Z"
             },
             {
               "$type": "Document",
@@ -298,8 +290,7 @@
               "RelativeToolTip": "MemoryGame\\ViewModels\\SignInVIewModel.cs",
               "ViewState": "AgIAABUBAAAAAAAAAAAkwCIBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:18:49.583Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:18:49.583Z"
             },
             {
               "$type": "Document",
@@ -310,8 +301,7 @@
               "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Views\\CustomBoardDialog.xaml",
               "RelativeToolTip": "MemoryGame\\Views\\CustomBoardDialog.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-31T11:33:07.096Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:33:07.096Z"
             },
             {
               "$type": "Document",
@@ -323,8 +313,7 @@
               "RelativeToolTip": "MemoryGame\\ViewModels\\MainViewModel.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAQwE0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:19:27.731Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:19:27.731Z"
             },
             {
               "$type": "Document",
@@ -335,8 +324,7 @@
               "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Views\\MainWindow.xaml",
               "RelativeToolTip": "MemoryGame\\Views\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-31T11:19:48.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:19:48.121Z"
             },
             {
               "$type": "Document",
@@ -349,10 +337,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T12:13:43.679Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",

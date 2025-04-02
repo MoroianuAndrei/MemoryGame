@@ -3,10 +3,10 @@
   <User>
     <Username>Andrei</Username>
     <ImagePath>/images/user_icon/jerry.png</ImagePath>
-    <GamesPlayed>6</GamesPlayed>
-    <GamesWon>4</GamesWon>
-    <TotalScore>460</TotalScore>
-    <TotalPlayTime>PT4M5S</TotalPlayTime>
+    <GamesPlayed>9</GamesPlayed>
+    <GamesWon>7</GamesWon>
+    <TotalScore>824</TotalScore>
+    <TotalPlayTime>PT5M3S</TotalPlayTime>
   </User>
   <SavedGame>
     <Username>Andrei</Username>
