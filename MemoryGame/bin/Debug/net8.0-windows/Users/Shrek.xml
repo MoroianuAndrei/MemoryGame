@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Username>Shrek</Username>
+    <ImagePath>/images/user_icon/shrek.png</ImagePath>
+    <GamesPlayed>0</GamesPlayed>
+    <GamesWon>0</GamesWon>
+    <TotalScore>0</TotalScore>
+    <TotalPlayTime>PT0S</TotalPlayTime>
+  </User>
+</UserData>

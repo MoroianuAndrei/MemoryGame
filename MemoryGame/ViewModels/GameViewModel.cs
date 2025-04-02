@@ -287,7 +287,7 @@ namespace MemoryGame.ViewModels
 
             // Creăm cărțile cu imaginile corespunzătoare
             // Modificare: folosim fundalul selectat
-            BitmapImage backImage = new BitmapImage(new Uri($"pack://application:,,,/Images/Game/Background{_selectedBackground}.png", UriKind.Absolute));
+            BitmapImage backImage = new BitmapImage(new Uri($"pack://application:,,,/Images/Game/Background/Background{_selectedBackground}.png", UriKind.Absolute));
 
             for (int i = 0; i < totalCards; i++)
             {

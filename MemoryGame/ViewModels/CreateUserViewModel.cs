@@ -29,7 +29,9 @@ namespace MemoryGame.ViewModels
             "/images/user_icon/spongebob.png",
             "/images/user_icon/patrick.png",
             "/images/user_icon/finn.png",
-            "/images/user_icon/jake.png"
+            "/images/user_icon/jake.png",
+            "/images/user_icon/shrek.png",
+            "/images/user_icon/fiona.png"
         };
 
         private int _currentImageIndex;
