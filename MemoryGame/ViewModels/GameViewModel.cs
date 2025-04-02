@@ -84,6 +84,7 @@ namespace MemoryGame.ViewModels
         }
 
         private int _selectedCategory = 1;
+        private int _selectedBackground = 1;
         private DateTime _gameStartTime;
         private DispatcherTimer _gameTimer;
         private Card _firstFlippedCard;
@@ -95,6 +96,7 @@ namespace MemoryGame.ViewModels
         private int _pendingBoardColumns = 4;
 
         public ICommand SelectCategoryCommand { get; }
+        public ICommand SelectBackgroundCommand { get; }
         public ICommand NewGameCommand { get; }
         public ICommand OpenGameCommand { get; }
         public ICommand SaveGameCommand { get; }
@@ -110,6 +112,7 @@ namespace MemoryGame.ViewModels
         {
             // Inițializăm comenzile
             SelectCategoryCommand = new RelayCommand(param => SelectCategory(int.Parse((string)param)));
+            SelectBackgroundCommand = new RelayCommand(param => SelectBackground(int.Parse((string)param)));
             NewGameCommand = new RelayCommand(_ => StartNewGame());
             OpenGameCommand = new RelayCommand(_ => OpenSavedGame());
             SaveGameCommand = new RelayCommand(_ => SaveGame(), _ => Cards != null && Cards.Count > 0);
@@ -162,10 +165,66 @@ namespace MemoryGame.ViewModels
             }
         }
 
+        private string CategoryOnCards(int id)
+        {
+            switch(id)
+            {
+                case 1:
+                    return "Cartoons";
+                    break;
+                case 2:
+                    return "Flowers";
+                    break;
+                case 3:
+                    return "Animals";
+                    break;
+                default:
+                    return "";
+                    break;
+            }
+        }
+
         private void SelectCategory(int categoryId)
         {
             _selectedCategory = categoryId;
-            MessageBox.Show($"Selected Category: {categoryId}", "Category", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"Selected {CategoryOnCards(categoryId)} Category", "Category", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private string BackgroundOnCards(int id)
+        {
+            switch(id)
+            {
+                case 1:
+                    return "Blue";
+                    break;
+                case 2:
+                    return "Pink";
+                    break;
+                case 3:
+                    return "Purple";
+                    break;
+                case 4:
+                    return "Yellow";
+                    break;
+                case 5:
+                    return "Green";
+                    break;
+                case 6:
+                    return "Orange";
+                    break;
+                case 7:
+                    return "Red";
+                    break;
+                default:
+                    return "";
+                    break;
+            }
+        }
+
+        private void SelectBackground(int backgroundId)
+        {
+            _selectedBackground = backgroundId;
+            MessageBox.Show($"Selected {BackgroundOnCards(backgroundId)} Background", "Background", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void StartNewGame()
@@ -198,7 +257,6 @@ namespace MemoryGame.ViewModels
             _gameTimer.Start();
         }
 
-
         private void CreateGameBoard()
         {
             Cards = new ObservableCollection<Card>();
@@ -228,7 +286,8 @@ namespace MemoryGame.ViewModels
             imageIds = imageIds.OrderBy(x => random.Next()).ToList();
 
             // Creăm cărțile cu imaginile corespunzătoare
-            BitmapImage backImage = new BitmapImage(new Uri($"pack://application:,,,/Images/Game/Background.png", UriKind.Absolute));
+            // Modificare: folosim fundalul selectat
+            BitmapImage backImage = new BitmapImage(new Uri($"pack://application:,,,/Images/Game/Background{_selectedBackground}.png", UriKind.Absolute));
 
             for (int i = 0; i < totalCards; i++)
             {
@@ -252,6 +311,7 @@ namespace MemoryGame.ViewModels
                     BoardRows = BoardRows,
                     BoardColumns = BoardColumns,
                     Category = _selectedCategory,
+                    Background = _selectedBackground,
                     Score = CurrentScore,
                     Moves = _moves
                 };
@@ -377,6 +437,7 @@ namespace MemoryGame.ViewModels
                 BoardRows = savedGame.BoardRows;
                 BoardColumns = savedGame.BoardColumns;
                 _selectedCategory = savedGame.Category;
+                _selectedBackground = savedGame.Background;
                 CurrentScore = savedGame.Score;
                 _moves = savedGame.Moves;
 
@@ -397,8 +458,10 @@ namespace MemoryGame.ViewModels
                 _isProcessingTurn = false;
 
                 // Restore the cards
+                // Restore the cards
                 Cards = new ObservableCollection<Card>();
-                BitmapImage backImage = new BitmapImage(new Uri($"pack://application:,,,/Images/Game/Background.png", UriKind.Absolute));
+                // Folosește fundalul selectat
+                BitmapImage backImage = new BitmapImage(new Uri($"pack://application:,,,/Images/Game/Background{_selectedBackground}.png", UriKind.Absolute));
 
                 foreach (var cardState in savedGame.CardStates)
                 {
@@ -412,6 +475,15 @@ namespace MemoryGame.ViewModels
                     };
 
                     Cards.Add(card);
+                }
+
+                // Clear the saved game from userData
+                userData.SavedGame = null;
+
+                // Save the updated user data without the saved game
+                using (FileStream fs = new FileStream(userFilePath, FileMode.Create))
+                {
+                    serializer.Serialize(fs, userData);
                 }
 
                 // Start the timer for the loaded game

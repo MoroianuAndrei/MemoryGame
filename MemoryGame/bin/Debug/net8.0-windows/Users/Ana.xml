@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Username>Ana</Username>
+    <ImagePath>/images/user_icon/minnie_mouse.png</ImagePath>
+    <GamesPlayed>5</GamesPlayed>
+    <GamesWon>3</GamesWon>
+    <TotalScore>440</TotalScore>
+    <TotalPlayTime>PT2M35S</TotalPlayTime>
+  </User>
+</UserData>

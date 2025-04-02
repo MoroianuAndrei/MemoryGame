@@ -10,9 +10,18 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Header="Category">
-                    <MenuItem Header="Category 1" Command="{Binding SelectCategoryCommand}" CommandParameter="1"/>
-                    <MenuItem Header="Category 2" Command="{Binding SelectCategoryCommand}" CommandParameter="2"/>
-                    <MenuItem Header="Category 3" Command="{Binding SelectCategoryCommand}" CommandParameter="3"/>
+                    <MenuItem Header="Cartoons" Command="{Binding SelectCategoryCommand}" CommandParameter="1"/>
+                    <MenuItem Header="Flowers" Command="{Binding SelectCategoryCommand}" CommandParameter="2"/>
+                    <MenuItem Header="Animals" Command="{Binding SelectCategoryCommand}" CommandParameter="3"/>
+                </MenuItem>
+                <MenuItem Header="Background">
+                    <MenuItem Header="Blue Background" Command="{Binding SelectBackgroundCommand}" CommandParameter="1"/>
+                    <MenuItem Header="Pink Background" Command="{Binding SelectBackgroundCommand}" CommandParameter="2"/>
+                    <MenuItem Header="Purple Background" Command="{Binding SelectBackgroundCommand}" CommandParameter="3"/>
+                    <MenuItem Header="Yellow Background" Command="{Binding SelectBackgroundCommand}" CommandParameter="4"/>
+                    <MenuItem Header="Green Background" Command="{Binding SelectBackgroundCommand}" CommandParameter="5"/>
+                    <MenuItem Header="Orange Background" Command="{Binding SelectBackgroundCommand}" CommandParameter="6"/>
+                    <MenuItem Header="Red Background" Command="{Binding SelectBackgroundCommand}" CommandParameter="7"/>
                 </MenuItem>
                 <MenuItem Header="New Game" Command="{Binding NewGameCommand}"/>
                 <MenuItem Header="Open Game" Command="{Binding OpenGameCommand}"/>

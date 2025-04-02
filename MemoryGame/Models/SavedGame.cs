@@ -11,6 +11,7 @@ namespace MemoryGame.Models
         public int BoardRows { get; set; }
         public int BoardColumns { get; set; }
         public int Category { get; set; }
+        public int Background { get; set; }
         public TimeSpan ElapsedTime { get; set; }
         public int Score { get; set; }
         public int Moves { get; set; }
