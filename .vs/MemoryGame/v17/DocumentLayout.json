@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|solutionrelative:memorygame\\viewmodels\\gameviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|c:\\users\\andre\\desktop\\facultate informatica\\licenta\\anul 2\\semestrul 2\\metode avansate de programare\\teme\\tema 2\\memorygame\\memorygame\\views\\gameview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|solutionrelative:memorygame\\views\\gameview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|c:\\users\\andre\\desktop\\facultate informatica\\licenta\\anul 2\\semestrul 2\\metode avansate de programare\\teme\\tema 2\\memorygame\\memorygame\\models\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|solutionrelative:memorygame\\models\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|c:\\users\\andre\\desktop\\facultate informatica\\licenta\\anul 2\\semestrul 2\\metode avansate de programare\\teme\\tema 2\\memorygame\\memorygame\\images\\game\\background4.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
       "RelativeMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|solutionrelative:memorygame\\images\\game\\background4.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
@@ -27,16 +35,8 @@
       "RelativeMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|solutionrelative:memorygame\\images\\game\\background7.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|c:\\users\\andre\\desktop\\facultate informatica\\licenta\\anul 2\\semestrul 2\\metode avansate de programare\\teme\\tema 2\\memorygame\\memorygame\\views\\gameview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|solutionrelative:memorygame\\views\\gameview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|c:\\users\\andre\\desktop\\facultate informatica\\licenta\\anul 2\\semestrul 2\\metode avansate de programare\\teme\\tema 2\\memorygame\\memorygame\\models\\savedgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|solutionrelative:memorygame\\models\\savedgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|c:\\users\\andre\\desktop\\facultate informatica\\licenta\\anul 2\\semestrul 2\\metode avansate de programare\\teme\\tema 2\\memorygame\\memorygame\\models\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|solutionrelative:memorygame\\models\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54C8C55C-6DA5-42A7-ACB4-D9658A7618A9}|MemoryGame\\MemoryGame.csproj|c:\\users\\andre\\desktop\\facultate informatica\\licenta\\anul 2\\semestrul 2\\metode avansate de programare\\teme\\tema 2\\memorygame\\memorygame\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -138,51 +138,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "background4.png",
-              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background4.png",
-              "RelativeDocumentMoniker": "MemoryGame\\images\\game\\background4.png",
-              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background4.png",
-              "RelativeToolTip": "MemoryGame\\images\\game\\background4.png",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-04-02T17:11:50.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "background3.png",
-              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background3.png",
-              "RelativeDocumentMoniker": "MemoryGame\\images\\game\\background3.png",
-              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background3.png",
-              "RelativeToolTip": "MemoryGame\\images\\game\\background3.png",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-04-02T17:11:47.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "background1.png",
-              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background1.png",
-              "RelativeDocumentMoniker": "MemoryGame\\images\\game\\background1.png",
-              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background1.png",
-              "RelativeToolTip": "MemoryGame\\images\\game\\background1.png",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-04-02T17:08:59.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "background7.png",
               "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background7.png",
               "RelativeDocumentMoniker": "MemoryGame\\images\\game\\background7.png",
@@ -199,10 +159,26 @@
               "RelativeDocumentMoniker": "MemoryGame\\ViewModels\\GameViewModel.cs",
               "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\ViewModels\\GameViewModel.cs",
               "RelativeToolTip": "MemoryGame\\ViewModels\\GameViewModel.cs",
-              "ViewState": "AgIAABkBAAAAAAAAAADgvy0BAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAABUBAAAAAAAAAAArwOIAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T11:35:42.864Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "background4.png",
+              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background4.png",
+              "RelativeDocumentMoniker": "MemoryGame\\images\\game\\background4.png",
+              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background4.png",
+              "RelativeToolTip": "MemoryGame\\images\\game\\background4.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-02T17:11:50.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
@@ -217,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "GameStatitics.cs",
               "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Models\\GameStatitics.cs",
               "RelativeDocumentMoniker": "MemoryGame\\Models\\GameStatitics.cs",
@@ -230,14 +206,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
+              "Title": "Card.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Models\\Card.cs",
+              "RelativeDocumentMoniker": "MemoryGame\\Models\\Card.cs",
+              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Models\\Card.cs",
+              "RelativeToolTip": "MemoryGame\\Models\\Card.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAjwB4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T11:34:41.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "GameView.xaml",
               "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Views\\GameView.xaml",
               "RelativeDocumentMoniker": "MemoryGame\\Views\\GameView.xaml",
-              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Views\\GameView.xaml",
-              "RelativeToolTip": "MemoryGame\\Views\\GameView.xaml",
+              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Views\\GameView.xaml*",
+              "RelativeToolTip": "MemoryGame\\Views\\GameView.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-31T11:30:23.451Z"
+              "WhenOpened": "2025-03-31T11:30:23.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "background1.png",
+              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background1.png",
+              "RelativeDocumentMoniker": "MemoryGame\\images\\game\\background1.png",
+              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background1.png",
+              "RelativeToolTip": "MemoryGame\\images\\game\\background1.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-02T17:08:59.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "background3.png",
+              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background3.png",
+              "RelativeDocumentMoniker": "MemoryGame\\images\\game\\background3.png",
+              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\images\\game\\background3.png",
+              "RelativeToolTip": "MemoryGame\\images\\game\\background3.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-02T17:11:47.495Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -253,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "SavedGame.cs",
               "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Models\\SavedGame.cs",
               "RelativeDocumentMoniker": "MemoryGame\\Models\\SavedGame.cs",
@@ -274,18 +288,6 @@
               "ViewState": "AgIAABcAAAAAAAAAAAAAACYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T11:36:18.303Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Card.cs",
-              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Models\\Card.cs",
-              "RelativeDocumentMoniker": "MemoryGame\\Models\\Card.cs",
-              "ToolTip": "C:\\Users\\andre\\Desktop\\Facultate Informatica\\Licenta\\Anul 2\\Semestrul 2\\Metode Avansate de Programare\\Teme\\Tema 2\\MemoryGame\\MemoryGame\\Models\\Card.cs",
-              "RelativeToolTip": "MemoryGame\\Models\\Card.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAADwvw4AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:34:41.548Z"
             },
             {
               "$type": "Document",
