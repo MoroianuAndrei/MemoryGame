@@ -28,6 +28,7 @@
                 <MenuItem Header="Save Game" Command="{Binding SaveGameCommand}"/>
                 <MenuItem Header="Statistics" Command="{Binding StatisticsCommand}"/>
                 <Separator/>
+                <MenuItem Header="Back" Command="{Binding BackCommand}"/>
                 <MenuItem Header="Exit" Command="{Binding ExitCommand}"/>
             </MenuItem>
             <MenuItem Header="Options">
@@ -41,13 +42,17 @@
 
         <!-- Game area -->
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16*"/>
+                <ColumnDefinition Width="201*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <!-- Game info panel -->
-            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center" Grid.ColumnSpan="2">
                 <TextBlock Text="Player: " Margin="0,0,5,0"/>
                 <TextBlock Text="{Binding CurrentPlayer.Username}" FontWeight="Bold" Margin="0,0,20,0"/>
                 <TextBlock Text="Score: " Margin="0,0,5,0"/>
@@ -57,7 +62,7 @@
             </StackPanel>
 
             <!-- Game board -->
-            <ItemsControl Grid.Row="1" ItemsSource="{Binding Cards}" Margin="10">
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding Cards}" Margin="10,10,10,10" Grid.ColumnSpan="2">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Rows="{Binding BoardRows}" Columns="{Binding BoardColumns}"/>

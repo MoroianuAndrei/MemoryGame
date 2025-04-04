@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Username>Hatz</Username>
+    <ImagePath>/images/user_icon/johnny.png</ImagePath>
+    <GamesPlayed>5</GamesPlayed>
+    <GamesWon>4</GamesWon>
+    <TotalScore>362</TotalScore>
+    <TotalPlayTime>PT1M44S</TotalPlayTime>
+  </User>
+</UserData>

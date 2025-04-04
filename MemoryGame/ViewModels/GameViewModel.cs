@@ -101,6 +101,7 @@ namespace MemoryGame.ViewModels
         public ICommand OpenGameCommand { get; }
         public ICommand SaveGameCommand { get; }
         public ICommand StatisticsCommand { get; }
+        public ICommand BackCommand { get; }
         public ICommand ExitCommand { get; }
         public ICommand SetBoardSizeCommand { get; }
         public ICommand AboutCommand { get; }
@@ -117,6 +118,7 @@ namespace MemoryGame.ViewModels
             OpenGameCommand = new RelayCommand(_ => OpenSavedGame());
             SaveGameCommand = new RelayCommand(_ => SaveGame(), _ => Cards != null && Cards.Count > 0);
             StatisticsCommand = new RelayCommand(_ => ShowStatistics());
+            BackCommand = new RelayCommand(_ => Back(), _ => Cards != null && Cards.Count > 0);
             ExitCommand = new RelayCommand(_ => Exit());
             SetBoardSizeCommand = new RelayCommand(param => SetBoardSize((string)param));
             AboutCommand = new RelayCommand(_ => ShowAboutDialog());
@@ -171,16 +173,12 @@ namespace MemoryGame.ViewModels
             {
                 case 1:
                     return "Cartoons";
-                    break;
                 case 2:
                     return "Flowers";
-                    break;
                 case 3:
                     return "Animals";
-                    break;
                 default:
                     return "";
-                    break;
             }
         }
 
@@ -196,28 +194,20 @@ namespace MemoryGame.ViewModels
             {
                 case 1:
                     return "Blue";
-                    break;
                 case 2:
                     return "Pink";
-                    break;
                 case 3:
                     return "Purple";
-                    break;
                 case 4:
                     return "Yellow";
-                    break;
                 case 5:
                     return "Green";
-                    break;
                 case 6:
                     return "Orange";
-                    break;
                 case 7:
                     return "Red";
-                    break;
                 default:
                     return "";
-                    break;
             }
         }
 
@@ -461,7 +451,7 @@ namespace MemoryGame.ViewModels
                 // Restore the cards
                 Cards = new ObservableCollection<Card>();
                 // Folosește fundalul selectat
-                BitmapImage backImage = new BitmapImage(new Uri($"pack://application:,,,/Images/Game/Background{_selectedBackground}.png", UriKind.Absolute));
+                BitmapImage backImage = new BitmapImage(new Uri($"pack://application:,,,/Images/Game/Background/Background{_selectedBackground}.png", UriKind.Absolute));
 
                 foreach (var cardState in savedGame.CardStates)
                 {
@@ -562,6 +552,35 @@ namespace MemoryGame.ViewModels
             }
         }
 
+        private void Back()
+        {
+            if (Cards != null && Cards.Count > 0)
+            {
+                var result = MessageBox.Show("Do you want to save the current game before exiting?",
+                    "Save Game", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.Cancel)
+                    return;
+
+                if (result == MessageBoxResult.Yes)
+                    SaveGame();
+
+                if (result == MessageBoxResult.No)
+                {
+                    // Save game statistics - use the total time that was allocated
+                    int totalCards = BoardRows * BoardColumns;
+                    int totalTime = totalCards * 2;
+                    totalTime = (int)Math.Ceiling(totalTime / 10.0) * 10;
+                    SaveGameStatistics(TimeSpan.FromSeconds(totalTime - _secondsRemaining));
+                }
+            }
+
+            // Oprim timer-ul
+            _gameTimer.Stop();
+
+            ResetGameState();
+        }
+
         private void Exit()
         {
             // Întreabă utilizatorul dacă dorește să salveze jocul înainte de ieșire
@@ -575,6 +594,15 @@ namespace MemoryGame.ViewModels
 
                 if (result == MessageBoxResult.Yes)
                     SaveGame();
+
+                if(result == MessageBoxResult.No)
+                {
+                    // Save game statistics - use the total time that was allocated
+                    int totalCards = BoardRows * BoardColumns;
+                    int totalTime = totalCards * 2;
+                    totalTime = (int)Math.Ceiling(totalTime / 10.0) * 10;
+                    SaveGameStatistics(TimeSpan.FromSeconds(totalTime - _secondsRemaining));
+                }
             }
 
             // Oprim timer-ul

@@ -78,6 +78,7 @@
     <None Remove="images\game\Category3\photo7.png" />
     <None Remove="images\game\Category3\photo8.png" />
     <None Remove="images\game\Category3\photo9.png" />
+    <None Remove="images\game\memorygame.png" />
     <None Remove="images\user_icon\bugs_bunny.png" />
     <None Remove="images\user_icon\darwin.png" />
     <None Remove="images\user_icon\finn.png" />
