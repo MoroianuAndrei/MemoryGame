@@ -3,9 +3,9 @@
   <User>
     <Username>Shrek</Username>
     <ImagePath>/images/user_icon/shrek.png</ImagePath>
-    <GamesPlayed>5</GamesPlayed>
-    <GamesWon>1</GamesWon>
-    <TotalScore>122</TotalScore>
-    <TotalPlayTime>PT1M55S</TotalPlayTime>
+    <GamesPlayed>6</GamesPlayed>
+    <GamesWon>2</GamesWon>
+    <TotalScore>232</TotalScore>
+    <TotalPlayTime>PT2M20S</TotalPlayTime>
   </User>
 </UserData>

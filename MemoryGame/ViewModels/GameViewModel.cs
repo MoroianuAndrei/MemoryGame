@@ -90,7 +90,7 @@ namespace MemoryGame.ViewModels
         private Card _firstFlippedCard;
         private Card _secondFlippedCard;
         private bool _isProcessingTurn;
-        private int _secondsRemaining = 0; // Countdown timer starts at 30 seconds
+        private int _secondsRemaining = 0;
         private int _moves;
         private int _pendingBoardRows = 4;
         private int _pendingBoardColumns = 4;
@@ -114,7 +114,7 @@ namespace MemoryGame.ViewModels
             // Inițializăm comenzile
             SelectCategoryCommand = new RelayCommand(param => SelectCategory(int.Parse((string)param)));
             SelectBackgroundCommand = new RelayCommand(param => SelectBackground(int.Parse((string)param)));
-            NewGameCommand = new RelayCommand(_ => StartNewGame());
+            NewGameCommand = new RelayCommand(_ => StartNewGame(), _ => Cards == null);
             OpenGameCommand = new RelayCommand(_ => OpenSavedGame());
             SaveGameCommand = new RelayCommand(_ => SaveGame(), _ => Cards != null && Cards.Count > 0);
             StatisticsCommand = new RelayCommand(_ => ShowStatistics());
