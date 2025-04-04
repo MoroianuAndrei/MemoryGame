@@ -38,8 +38,8 @@
                    Margin="10" 
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Center"
-                   Width="120" 
-                   Height="120"/>
+                   Width="200" 
+                   Height="200"/>
         </Grid>
 
         <!-- Butoanele -->
